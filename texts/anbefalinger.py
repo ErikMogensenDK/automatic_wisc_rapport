@@ -1,3 +1,5 @@
+import pandas as pd
+
 # anbefalinger, som afhænger af kognitivt niveau
 # Anbefalinger til lavt VFI:
 VFI_anbefaling_lav = '''
@@ -37,6 +39,16 @@ RSI_anbefaling_lav = '''
 Eksempel på anbefaling (RSI)
 '''
 
+#Anbefalinger til lav HIK
+HIK_anbefaling_lav = '''Lav HIK.'''
+
+
+rækker = ['VFI', 'VSI', 'LRI', 'AHI', 'FHI', 'HIK']
+anbefalinger = [VFI_anbefaling_lav, AHI_anbefaling_lav, FHI_anbefaling_lav, VSI_anbefaling_lav, RSI_anbefaling_lav, HIK_anbefaling_lav]
+
+# create DF for anbefalinger
+lav_anbefaling_df = pd.DataFrame(rækker, anbefalinger)
+lav_anbefaling_df.head()
 
 #Anbefalinger til lavt forarbejdningshastighed OG lavt AHI
 
