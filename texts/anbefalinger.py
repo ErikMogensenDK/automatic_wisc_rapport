@@ -9,7 +9,7 @@ Derfor kan det hjælpe at supplere med visuel afbildning af strukturen i hverdag
 '''
 
 # Anbefalinger til lavt AHI:
-AHI_anbefaling_lav = '''Arbejdshukommelse er udtryk for for meget mental "plads" man har at arbejde på. 
+AHI_anbefaling_lav = '''Arbejdshukommelse er udtryk for hvor meget mental "plads" man har at arbejde på. 
 Hvis arbejdshukommelsen har lav kapacitet kan det derfor være svært at løse komplekse opgaver som består af mange dele, 
 som samtidigt skal anvendes - da der ikke er plads til at holde dem alle i sindet på samme tid.
 Man kan sammenligne det med at have et mindre skrivebord at arbejde på. 
@@ -47,9 +47,8 @@ rækker = ['VFI', 'VSI', 'LRI', 'AHI', 'FHI', 'HIK']
 anbefalinger = [VFI_anbefaling_lav, AHI_anbefaling_lav, FHI_anbefaling_lav, VSI_anbefaling_lav, RSI_anbefaling_lav, HIK_anbefaling_lav]
 
 # create DF for anbefalinger
-lav_anbefaling_df = pd.DataFrame(rækker, anbefalinger)
-lav_anbefaling_df.head()
-
+lav_anbefaling_df = pd.DataFrame(anbefalinger, rækker)
+#print(lav_anbefaling_df.loc[])
 #Anbefalinger til lavt forarbejdningshastighed OG lavt AHI
 
 
