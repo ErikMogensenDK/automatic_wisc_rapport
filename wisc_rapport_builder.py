@@ -19,13 +19,13 @@ class Builder:
 	def get_comparison_to_mean(self, score):
 		if score < 70:
 			return 'langt under gennemsnittet'
-		if score > 70 and score < 85:
+		if score > 69 and score < 85:
 			return 'noget under gennemsnittet'
 		if score > 84 and score < 115:
 			return 'gennemsnitligt'
 		if score > 114 and score <130:
 			return 'noget over gennemsnittet'
-		if score > 130: 
+		if score > 129: 
 			return 'langt over gennemsnittet'
 			
 
@@ -35,7 +35,7 @@ class Builder:
 		       'VSI': 'visuo-spatial (visuelt/rumligt) indeks', 
 		       'FHI': 'forarbejdningshastigheds-indeks', 
 		       'AHI': 'arbejdshukommelses-indeks',
-		       'LRI': 'logisk ræsonnerings-indeks'}
+		       'RSI': 'logisk ræsonnerings-indeks'}
 
 		description = ''
 		for result in result_dict:
@@ -75,7 +75,7 @@ class Builder:
 
 
 	def get_result(self, result_df):
-		indexes = ['VFI', 'VSI', 'LRI', 'AHI', 'FHI', 'HIK']
+		indexes = ['VFI', 'VSI', 'RSI', 'AHI', 'FHI', 'HIK']
 		filtered_df = result_df[result_df.iloc[:, 0].isin(indexes)]
 		result = filtered_df.to_dict(orient='records')
 		return result
