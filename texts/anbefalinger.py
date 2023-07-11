@@ -2,8 +2,8 @@ import pandas as pd
 
 # anbefalinger, som afhænger af kognitivt niveau
 # Anbefalinger til lavt VFI:
-VFI_anbefaling_lav = '''Det verbale forståelses-indeks måler evnen til at forstå verbal information.
-Det indebærer at ræsonnere i forhold til verbale begrebe, og at kommunikere tanker og ideer.
+VFI_anbefaling_lav = '''Det verbale forståelses-indeks (VFI) måler evnen til at forstå verbal information.
+Det indebærer at ræsonnere i forhold til verbale begreber, og at kommunikere tanker og ideer.
 Det måler også tilegnet viden.
 Derfor kan de følgende tiltag være relevante for at støtte en elev som har scoret lavt på det verbale forståelses-indeks:
 - Giv simple og korte instruktioner.
@@ -15,8 +15,8 @@ Derfor kan de følgende tiltag være relevante for at støtte en elev som har sc
 - Støt barnet at spørge, hvis de er i tvivl.
 - Brug visuelle støtte-materialer.
 - Lad barnet optage dele af undervisningen/instruktioner på telefon.
-- Visualiser strukturen i hverdagen og løsningen af opgaver (både ift. lektier og i undervisningen) fx form af billeder, piktogrammer og ugeskemaer. 
-For at minimere elevens oplevelse af at være anderledes kan nogle af disse værktøjer fx anvendes i hele klassen, eller mere diskret på en computer - fremfor fx at eleven er den eneste med piktogrammer på deres bord.
+- Visualiser strukturen i hverdagen og løsningen af opgaver (både ift. lektier og i undervisningen) fx ved brug af billeder, piktogrammer og ugeskemaer. 
+For at minimere elevens oplevelse af at være anderledes kan nogle af disse værktøjer fx anvendes i hele klassen, eller mere diskret på en computer - fremfor, at eleven fx er den eneste med piktogrammer på deres bord.
 '''
 
 # Anbefalinger til lavt AHI:
@@ -80,7 +80,8 @@ Følgende støtte kan være relevant for en elev, som scorer lavt på RSI :
 #Anbefalinger til lav HIK
 HIK_anbefaling_lav = ''''''
 
-generelle_anbefalinger = '''Det er ofte konstruktivt, at man ikke bare ser på, hvordan man kan rumme den enkelte elevs udfordringer, men også tager hensyn til den enkelte elev på klasse-niveau.
+generelle_anbefalinger = '''Det er ofte konstruktivt, at man ikke bare ser på, hvordan man kan rumme den enkelte elevs udfordringer, men også tager hensyn ved at være opmærksom på klasse-niveau.
+Derfore anbefales følgende:
 - Ros værdier I synes er vigtige, som er indenfor elevernes kontrol (fx flid, omtanke, ærlighed eller mod) fremfor resultater (fx fejl, hastighed, karakter).
 - Hvis det er vigtigt at pointere faglighed, så fokuserer på eleverne egen tidligere præstation, fremfor at sammenligninge med andre elever.
 - Vær opmærksomme på også at understøtte et lignende fokus blandt eleverne og sæt passende og rimelige rammer for at undgå evt. uhensigtsmæssig sammenlignings-kultur blandt eleverne.
@@ -88,6 +89,8 @@ generelle_anbefalinger = '''Det er ofte konstruktivt, at man ikke bare ser på, 
 - Sørg for at opgaver har en passende sværhedsgrad (den enkelte elev bør kunne løse størstedelen af opgaverne, størstedelen af tiden)
 - Hvis I oplever udfordringer med en elev, så undersøg om det kan forklares i konteksten (fx pga. forstyrrelser, hændelser inden eller efter undervisningen, for svære eller for lette opgaver). Overvej herefter om det kan forklares ved at elevens sociale, følelsesmæssige eller kognitive behov ikke bliver mødt. 
 - Opfordr elever til at spørge hvis der er noget de ikke forstår, eller ikke ved hvad de skal.
+Det er vigtigt starte med at implimentere 2-3 tiltag for den enkelte elev, og efter minimum 2 uger tager stilling til, om de tiltag man vælger at tage i brug har den ønskede virkning, eller en uforudset negativ virkning.
+Først herefter bør man tilføje eller erstatte tiltag.
 '''
 
 rækker = ['VFI', 'VSI', 'RSI', 'AHI', 'FHI', 'HIK']
