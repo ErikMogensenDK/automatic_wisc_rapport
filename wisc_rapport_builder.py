@@ -33,17 +33,17 @@ class Builder:
 			return 'langt over gennemsnittet'
 
 	def create_description_of_scores(self, result_dict):
-		long_veLRIon_dict = {'VFI': 'verbalt forståelses-indeks', 
+		long_veRSIon_dict = {'VFI': 'verbalt forståelses-indeks', 
 		       'HIK': 'hele skalaen intelligenskvotient', 
 		       'VSI': 'visuo-spatial (visuelt/rumligt) indeks', 
 		       'FHI': 'forarbejdningshastigheds-indeks', 
 		       'AHI': 'arbejdshukommelses-indeks',
-		       'LRI': 'logisk ræsonnerings-indeks'}
+		       'RSI': 'logisk ræsonnerings-indeks'}
 
 		description = ''
 		for result in result_dict:
 			comparison_to_mean = self.get_comparison_to_mean(result['score'])
-			description = description + f'''{result['mål']} ({long_veLRIon_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%ki']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
+			description = description + f'''{result['mål']} ({long_veRSIon_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%ki']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
 			#descriptions.append(description)
 		return description
 	
@@ -86,11 +86,11 @@ class Builder:
 				return FHI_anbefaling_lav 
 			case 'VSI':
 				return VFI_anbefaling_lav
-			case 'LRI':
+			case 'RSI':
 				return RSI_anbefaling_lav
 
 	def get_result(self, result_df):
-		indexes = ['VFI', 'VSI', 'LRI', 'AHI', 'FHI', 'HIK']
+		indexes = ['VFI', 'VSI', 'RSI', 'AHI', 'FHI', 'HIK']
 		filtered_df = result_df[result_df.iloc[:, 0].isin(indexes)]
 		result = filtered_df.to_dict(orient='records')
 		return result

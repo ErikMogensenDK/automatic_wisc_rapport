@@ -90,7 +90,7 @@ generelle_anbefalinger = '''Det er ofte konstruktivt, at man ikke bare ser på, 
 - Opfordr elever til at spørge hvis der er noget de ikke forstår, eller ikke ved hvad de skal.
 '''
 
-rækker = ['VFI', 'VSI', 'LRI', 'AHI', 'FHI', 'HIK']
+rækker = ['VFI', 'VSI', 'RSI', 'AHI', 'FHI', 'HIK']
 anbefalinger = [VFI_anbefaling_lav, AHI_anbefaling_lav, FHI_anbefaling_lav, VSI_anbefaling_lav, RSI_anbefaling_lav, HIK_anbefaling_lav]
 
 # create DF for anbefalinger
