@@ -1,5 +1,5 @@
 import pandas as pd
-from texts.anbefalinger import lav_anbefaling_df, generelle_anbefalinger
+from texts.anbefalinger import *
 from texts.general_intro import*
 from docx import Document
 from docx.shared import Inches
@@ -21,26 +21,29 @@ class Builder:
 			return 'langt under gennemsnittet'
 		if score > 69 and score < 85:
 			return 'noget under gennemsnittet'
-		if score > 84 and score < 115:
+		if score > 84 and score < 90:
+			return 'nedre del af gennemsnittet'
+		if score > 90 and score < 110:
 			return 'gennemsnitligt'
-		if score > 114 and score <130:
+		if score > 109 and score <115:
+			return 'øverste del af gennemsnittet'
+		if score > 115 and score <130:
 			return 'noget over gennemsnittet'
 		if score > 129: 
 			return 'langt over gennemsnittet'
-			
 
 	def create_description_of_scores(self, result_dict):
-		long_version_dict = {'VFI': 'verbalt forståelses-indeks', 
+		long_veLRIon_dict = {'VFI': 'verbalt forståelses-indeks', 
 		       'HIK': 'hele skalaen intelligenskvotient', 
 		       'VSI': 'visuo-spatial (visuelt/rumligt) indeks', 
 		       'FHI': 'forarbejdningshastigheds-indeks', 
 		       'AHI': 'arbejdshukommelses-indeks',
-		       'RSI': 'logisk ræsonnerings-indeks'}
+		       'LRI': 'logisk ræsonnerings-indeks'}
 
 		description = ''
 		for result in result_dict:
 			comparison_to_mean = self.get_comparison_to_mean(result['score'])
-			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%ki']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
+			description = description + f'''{result['mål']} ({long_veLRIon_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%ki']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
 			#descriptions.append(description)
 		return description
 	
@@ -61,21 +64,33 @@ class Builder:
 			row_cells[4].text = self.get_comparison_to_mean(item['score'])
 		return document
 
-	def get_recommendations(self, result_dict):
+	
+	def get_recommendations_lav(self, result_dict):
 		recommendations = []
 		for result in result_dict:
-			if result['score'] < 85:
-				recommendation = lav_anbefaling_df.loc[result['mål']][0]
+			if result['score'] < 86:
+				recommendation = self.get_recommendation_of_specific_index(result['mål'])
 				recommendations.append(recommendation)
+		recommendations = '\n'.join(recommendations)
 		return recommendations
 	
-
-						
-		# TODO: def create_description of scores(self, scores):
-
+	def get_recommendation_of_specific_index(self, index):
+		match index:
+			case 'VFI':
+				return VFI_anbefaling_lav
+			case 'HIK':
+				return HIK_anbefaling_lav 
+			case 'AHI':
+				return AHI_anbefaling_lav 
+			case 'FHI':
+				return FHI_anbefaling_lav 
+			case 'VSI':
+				return VFI_anbefaling_lav
+			case 'LRI':
+				return RSI_anbefaling_lav
 
 	def get_result(self, result_df):
-		indexes = ['VFI', 'VSI', 'RSI', 'AHI', 'FHI', 'HIK']
+		indexes = ['VFI', 'VSI', 'LRI', 'AHI', 'FHI', 'HIK']
 		filtered_df = result_df[result_df.iloc[:, 0].isin(indexes)]
 		result = filtered_df.to_dict(orient='records')
 		return result
@@ -89,7 +104,7 @@ class Builder:
 
 
 
-	def build_rapport(self):
+	def build_rapport(self, save_name):
 		document = Document()
 		document.add_heading(f'WISC-IV rapport {datetime.today().strftime("%d-%m-%y")}', 0)
 		document.add_paragraph(generel_intro)
@@ -105,9 +120,9 @@ class Builder:
 
 		document.add_heading('Anbefalinger', 1)
 		document.add_paragraph(self.get_recommendations_for_HIK(result))
-		document.add_paragraph(self.get_recommendations(result))
+		document.add_paragraph(self.get_recommendations_lav(result))
 		document.add_paragraph(generelle_anbefalinger)
-		document.save(f'WISC_IV_rapport.docx')
+		document.save(f'{save_name}.docx')
 		return document
 
 
