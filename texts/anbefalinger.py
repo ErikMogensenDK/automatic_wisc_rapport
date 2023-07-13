@@ -105,3 +105,5 @@ lav_anbefaling_df = pd.DataFrame(anbefalinger, rækker)
 # Generelle anbefalinger:
 
 # Currently the format us fucked up by the adding to DF, so i probably need to find a different way to index into the recommendations for the different indexes... 
+
+# Noget med at tilføje kokke-metaforen i stedet for Kate From's metafor.
