@@ -1,16 +1,15 @@
 generel_intro = """WISC-V er en kognitiv test. Kognition er et andet ord for tænkning og testen kan give et indblik i mental funktion indenfor en række områder, herunder det sproglige, det visuelt-rummelige, det logiske, arbejdshukommelsen og mental arbejdshastighed.
 WISC-testen undersøger disse områder på en struktureret og systematisk måde, og scores sammenlignes med børn på samme alder med samme biologiske køn.
-Testens resultater afhænger udog også af dagsformen, om man fx er meget træt, nervøs eller om man er motiveret for at deltage. 
+Testens resultater afhænger dog også af dagsformen, om man fx er meget træt, nervøs eller om man er motiveret for at deltage. 
 Det er vigtigt at huske på, at en sådan test er forbundet med en lille statistisk unøjagtighed.
-Derfor er testens resultat både angivet i scores, men også med et 95% konfidens-interval (herefter forkortet 95%KI), der siger noget om det generelle område vi med større statistisk sikkerhed kan vurdere at scores ligger indenfor.
-Testens resultat er delt op i 5 forskellige indekser: Verbal forståelse, Arbejdshukommelse, Forarbejdningshastighed, Visuspatial bearbejdning og Logisk ræsonnering.
-Det verbale forståelses-indeks (VFI) måler evnen til at forstå verbal information.
-Arbejdshukommelses Indeks måler evnen til mentalt at "holde flere bolde i luften". 
+Derfor er testens resultat både angivet i scores, men også med et 95% konfidensinterval (herefter forkortet 95%KI), der siger noget om det område vi med større statistisk sikkerhed kan vurdere at scores ligger indenfor.
+Testens resultat er delt op i 5 forskellige indekser: Verbal forståelse, Arbejdshukommelse, Forarbejdningshastighed, Visuospatial bearbejdning og Logisk Ræsonnering.
+Det verbale forståelsesindeks (VFI) måler evnen til at forstå verbal information.
+Indekset for arbejdshukommelses måler evnen til mentalt at "holde flere bolde i luften". 
 Forarbejdningshastighed er udtryk for ens mentale arbejdshastighed.
-Visuo-Spatialt Indeks måler evnen til rumlig bearbejdning og at kunne opfatte forholdet mellem helhed og dele. 
-Ræsonnerings-indekset måler evnen til at tænke logisk og abstrakt, udvikle nye tankemønstre, løse problemer på en kreativ måde, drage konklusioner og se mønstre og sammenhænge.
-
-Testens resultat er opsummeret nedenfor."""
+Det visuospatiale indeks måler evnen til rumlig bearbejdning og at kunne opfatte forholdet mellem helheder og dele. 
+Ræsonneringsindekset måler evnen til at tænke logisk og abstrakt, udvikle nye tankemønstre, drage konklusioner og se mønstre/sammenhænge.
+Testens resultat er opsummeret nedenfor i tekst og efterfølgende i tabel."""
 
 fortsat_intro_til_lav_begavelse = """En lav score på testen er ikke et udtryk for, at man ikke kan udvikle sig, men et udtryk for hvor man ligger ift. gennemsnittet.
 Et barn vil derfor oftest udvikle sig sammen med gennemsnittet - så barnets rå-score stiger samtidig med at gennemsnittet også stiger.

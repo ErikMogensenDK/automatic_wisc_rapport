@@ -81,15 +81,12 @@ Følgende støtte kan være relevant for en elev, som scorer lavt på RSI :
 HIK_anbefaling_lav = ''''''
 
 generelle_anbefalinger = '''Det er ofte konstruktivt, at man ikke bare ser på, hvordan man kan rumme den enkelte elevs udfordringer, men også tager hensyn ved at være opmærksom på klasse-niveau.
-Derfore anbefales følgende:
+Derfor anbefales følgende:
 - Ros værdier I synes er vigtige, som er indenfor elevernes kontrol (fx flid, omtanke, ærlighed eller mod) fremfor resultater (fx fejl, hastighed, karakter).
-- Hvis det er vigtigt at pointere faglighed, så fokuserer på eleverne egen tidligere præstation, fremfor at sammenligninge med andre elever.
-- Vær opmærksomme på også at understøtte et lignende fokus blandt eleverne og sæt passende og rimelige rammer for at undgå evt. uhensigtsmæssig sammenlignings-kultur blandt eleverne.
-- Sørg for at gøre klassens rammer konkrete, tydelige (fx hvor længe de skal arbejde, og hvad der forventes i denne periode) og forudsigelige (fx gennem ugeskemaer, ved at dage/uger minder om hinanden, og at aftaler om opgaver/rammer/arbejdstid ikke ændres).
-- Sørg for at opgaver har en passende sværhedsgrad (den enkelte elev bør kunne løse størstedelen af opgaverne, størstedelen af tiden)
-- Hvis I oplever udfordringer med en elev, så undersøg om det kan forklares i konteksten (fx pga. forstyrrelser, hændelser inden eller efter undervisningen, for svære eller for lette opgaver). Overvej herefter om det kan forklares ved at elevens sociale, følelsesmæssige eller kognitive behov ikke bliver mødt. 
+- Hvis det er vigtigt at pointere faglighed, så fokuserer på eleverne egen tidligere præstation, fremfor at sammenligne med andre elever.
+- Vær opmærksomme på også at understøtte et lignende fokus blandt eleverne og sæt passende og rimelige rammer for at undgå evt. uhensigtsmæssig sammenlignings-kultur blandt eleverne.  - Sørg for at gøre klassens rammer konkrete, tydelige (fx hvor længe de skal arbejde, og hvad der forventes i denne periode) og forudsigelige (fx gennem ugeskemaer, ved at dage/uger minder om hinanden, og at aftaler om opgaver/rammer/arbejdstid ikke ændres).  - Sørg for at opgaver har en passende sværhedsgrad (den enkelte elev bør kunne løse størstedelen af opgaverne, størstedelen af tiden) - Hvis I oplever udfordringer med en elev, så undersøg om det kan forklares i konteksten (fx pga. forstyrrelser, hændelser inden eller efter undervisningen, for svære eller for lette opgaver). Overvej herefter om det kan forklares ved at elevens sociale, følelsesmæssige eller kognitive behov ikke bliver mødt. 
 - Opfordr elever til at spørge hvis der er noget de ikke forstår, eller ikke ved hvad de skal.
-Det er vigtigt starte med at implimentere 2-3 tiltag for den enkelte elev, og efter minimum 2 uger tager stilling til, om de tiltag man vælger at tage i brug har den ønskede virkning, eller en uforudset negativ virkning.
+Det er vigtigt starte med at implementere 2-3 tiltag for den enkelte elev, og efter minimum 2 uger tager stilling til, om de tiltag man vælger at tage i brug har den ønskede virkning, eller en uforudset negativ virkning.
 Først herefter bør man tilføje eller erstatte tiltag.
 '''
 

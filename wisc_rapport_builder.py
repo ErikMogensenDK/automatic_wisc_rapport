@@ -18,27 +18,27 @@ class Builder:
 	
 	def get_comparison_to_mean(self, score):
 		if score < 70:
-			return 'langt under gennemsnittet'
+			return 'Langt under gennemsnittet'
 		if score > 69 and score < 85:
-			return 'noget under gennemsnittet'
+			return 'Noget under gennemsnittet'
 		if score > 84 and score < 90:
-			return 'nedre del af gennemsnittet'
-		if score > 90 and score < 110:
-			return 'gennemsnitligt'
-		if score > 109 and score <115:
-			return 'øverste del af gennemsnittet'
-		if score > 115 and score <130:
-			return 'noget over gennemsnittet'
+			return 'Nedre del af gennemsnittet'
+		if score > 90 and score < 109:
+			return 'Gennemsnitligt'
+		if score > 108 and score <115:
+			return 'Øverste del af gennemsnittet'
+		if score > 114 and score <130:
+			return 'Noget over gennemsnittet'
 		if score > 129: 
-			return 'langt over gennemsnittet'
+			return 'Langt over gennemsnittet'
 
 	def create_description_of_scores(self, result_dict):
-		long_veRSIon_dict = {'VFI': 'verbalt forståelses-indeks', 
+		long_veRSIon_dict = {'VFI': 'verbalt forståelsesindeks', 
 		       'HIK': 'hele skalaen intelligenskvotient', 
-		       'VSI': 'visuo-spatial (visuelt/rumligt) indeks', 
-		       'FHI': 'forarbejdningshastigheds-indeks', 
-		       'AHI': 'arbejdshukommelses-indeks',
-		       'RSI': 'logisk ræsonnerings-indeks'}
+		       'VSI': 'visuospatial (visuelt/rumligt) indeks', 
+		       'FHI': 'forarbejdningshastighedsindeks', 
+		       'AHI': 'arbejdshukommelsesindeks',
+		       'RSI': 'logisk ræsonneringsindeks'}
 
 		description = ''
 		for result in result_dict:
