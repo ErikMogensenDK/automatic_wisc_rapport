@@ -122,7 +122,7 @@ class Builder:
 		document.add_paragraph(self.get_recommendations_for_HIK(result))
 		document.add_paragraph(self.get_recommendations_lav(result))
 		document.add_paragraph(generelle_anbefalinger)
-		#document.save(f'{save_name}.docx')
+		document.save(f'{save_name}.docx')
 		return document
 
 

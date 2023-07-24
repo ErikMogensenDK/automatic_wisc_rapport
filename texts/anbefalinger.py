@@ -20,7 +20,7 @@ For at minimere elevens oplevelse af at være anderledes kan nogle af disse vær
 '''
 
 # Anbefalinger til lavt AHI:
-AHI_anbefaling_lav = '''Arbejdshukommelses Indeks måler evnen til at "holde flere bolde i luften". 
+AHI_anbefaling_lav = '''Arbejdshukommelses Indeks måler evnen til mentalt at "holde flere bolde i luften". 
 Dette kræver brug af opmærksomhed, koncentration og mental kontrol.
 Hvis arbejdshukommelsen har lav kapacitet kan det derfor være svært at løse komplekse opgaver, som består af mange dele, som samtidigt skal anvendes - da der ikke er plads til at fastholde dem alle i sindet på samme tid - nogle af delene kan blive "glemt", i takt med at andre bliver anvendt.
 I forlængelse heraf kan følgende tiltag anvendes for at støtte en elev med nedsat arbejdshukommelse.
@@ -66,7 +66,7 @@ Derfor kan de følgende tiltag være relevante for at støtte en elev som har sc
 '''
 
 # Anbefalinger til lavt RSI:
-RSI_anbefaling_lav = '''RæsonneringsIndeks måler evnen til at tænke logisk og abstrakt, udvikle nye tankemønstre, løse problemer på en kreativ måde, drage konklusioner og se mønstre og sammenhænge.
+RSI_anbefaling_lav = '''Ræsonnerings-indekset måler evnen til at tænke logisk og abstrakt, udvikle nye tankemønstre, løse problemer på en kreativ måde, drage konklusioner og se mønstre og sammenhænge.
 Indekset måler også overordnet visuel evne og evnen til at bearbejde informationer samtidigt.
 Følgende støtte kan være relevant for en elev, som scorer lavt på RSI :
 - Lær eleven at bruge selvtale og verbal hukommelse til problemløsning

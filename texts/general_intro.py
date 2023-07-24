@@ -3,6 +3,13 @@ WISC-testen undersøger disse områder på en struktureret og systematisk måde,
 Testens resultater afhænger udog også af dagsformen, om man fx er meget træt, nervøs eller om man er motiveret for at deltage. 
 Det er vigtigt at huske på, at en sådan test er forbundet med en lille statistisk unøjagtighed.
 Derfor er testens resultat både angivet i scores, men også med et 95% konfidens-interval (herefter forkortet 95%KI), der siger noget om det generelle område vi med større statistisk sikkerhed kan vurdere at scores ligger indenfor.
+Testens resultat er delt op i 5 forskellige indekser: Verbal forståelse, Arbejdshukommelse, Forarbejdningshastighed, Visuspatial bearbejdning og Logisk ræsonnering.
+Det verbale forståelses-indeks (VFI) måler evnen til at forstå verbal information.
+Arbejdshukommelses Indeks måler evnen til mentalt at "holde flere bolde i luften". 
+Forarbejdningshastighed er udtryk for ens mentale arbejdshastighed.
+Visuo-Spatialt Indeks måler evnen til rumlig bearbejdning og at kunne opfatte forholdet mellem helhed og dele. 
+Ræsonnerings-indekset måler evnen til at tænke logisk og abstrakt, udvikle nye tankemønstre, løse problemer på en kreativ måde, drage konklusioner og se mønstre og sammenhænge.
+
 Testens resultat er opsummeret nedenfor."""
 
 fortsat_intro_til_lav_begavelse = """En lav score på testen er ikke et udtryk for, at man ikke kan udvikle sig, men et udtryk for hvor man ligger ift. gennemsnittet.
