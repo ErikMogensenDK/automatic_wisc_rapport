@@ -22,7 +22,7 @@ For at minimere elevens oplevelse af at være anderledes kan nogle af disse vær
 # Anbefalinger til lavt AHI:
 AHI_anbefaling_lav = '''Arbejdshukommelses Indeks måler evnen til mentalt at "holde flere bolde i luften". 
 Dette kræver brug af opmærksomhed, koncentration og mental kontrol.
-Hvis arbejdshukommelsen har lav kapacitet kan det derfor være svært at løse komplekse opgaver, som består af mange dele, som samtidigt skal anvendes - da der ikke er plads til at fastholde dem alle i sindet på samme tid - nogle af delene kan blive "glemt", i takt med at andre bliver anvendt.
+Hvis arbejdshukommelsen har lav kapacitet kan det derfor være svært at løse komplekse opgaver, som består af mange dele, som samtidigt skal anvendes - da der ikke er plads til at fastholde dem alle i sindet på en gang - nogle af delene kan blive "glemt", i takt med at andre bliver anvendt.
 I forlængelse heraf kan følgende tiltag anvendes for at støtte en elev med nedsat arbejdshukommelse.
 - Vær sikker på at barnet ved hvad de skal gøre for at løse opgaven
 - Øv at følge instruktioner ifbm. opgaveløsning
@@ -36,13 +36,13 @@ Disse hjælpemidler vil have til fælles, at de støtter eleven i at kunne vende
 
 # Anbefalinger til lavt FHI:
 FHI_anbefaling_lav = '''Forarbejdningshastighed er udtryk for ens mentale arbejdshastighed.
-En lav score på forarbejdningshastighed vil betyde at man vil være længere om at løse opgaver end en gennemsnitlig elev af samme køn.
+En lav score på forarbejdningshastighed vil betyde at man vil være længere om at løse opgaver end en gennemsnitlig elev af samme biologiske køn på samme alder.
 Derfor kan de følgende tiltag være relevante for at støtte en elev som har scoret lavt på forarbejdningshastighed:
 - Giv god tid til svar og beslutningstagen
 - Lad ikke eleven arbejde under tidspres
 - Læg vægt på kvalitet frem for kvantitet i skoleopgaver
 - Giv ekstra tid til at færdiggøre opgaver
-- Vær opmærksom på distraktorer i omgivelserne
+- Vær opmærksom på at minimere distraktioner i omgivelserne
 '''
 
 # Anbefalinger til lavt VSI:

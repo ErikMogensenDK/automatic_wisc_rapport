@@ -13,7 +13,7 @@ Testens resultat er opsummeret nedenfor i tekst og efterfølgende i tabel."""
 
 fortsat_intro_til_lav_begavelse = """En lav score på testen er ikke et udtryk for, at man ikke kan udvikle sig, men et udtryk for hvor man ligger ift. gennemsnittet.
 Et barn vil derfor oftest udvikle sig sammen med gennemsnittet - så barnets rå-score stiger samtidig med at gennemsnittet også stiger.
-Derfor ser man ofte, at børn bliver ved med at ligge i nærheden af det samme område ift. gennemsnittet, men det er vigtigt ikke at misforstå dette med fraværet af udvikling, eller manglende potentiale herfor.
+Derfor ser man ofte, at børn bliver ved med at ligge i nærheden af det samme område ift. gennemsnittet, men det er vigtigt ikke at forveksle dette med fraværet af udvikling, eller manglende potentiale herfor.
 Man kan sammenligne det med, at være højdemæssigt lavere end gennemsnittet i børnehaven.
 Her kan et barn 10 år senere også være blandt de laveste børn i udskolingen, selvom de er langt højere end de var i børnehaven.
 Med dette i tankerne er det dog vigtigt at støtte barnet i at finde værdier og mål, som relaterer sig til ting, som er indenfor barnets kontrol. 
