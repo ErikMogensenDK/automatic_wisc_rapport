@@ -87,7 +87,14 @@ Disse visuelle hjælpemidler vil have til fælles, at de giver mulighed for, at 
 		builder_test = Builder('excel_with_scores.xlsx')
 		# will fail, if it fails to build
 		builder_test.build_rapport('Wisc_rapport_s_2023')
-		
+	
+#	def test_create_df_from_dict(self):
+#		result_dict = [{'mål': 'HIK', 'score': 75, '95%ki': '145-151', 'percentil': 99, }, {'mål': 'VFI', 'score': 100, '95%ki': '95-105', 'percentil': 50}, {'mål': 'VSI', 'score': 86, '95%ki': '70-90', 'percentil': 25}, {'mål': 'RSI', 'score': 86, '95%ki': '65-78', 'percentil': 4}, {'mål': 'AHI', 'score': 116, '95%ki': '110-130', 'percentil': 64}, {'mål': 'FHI', 'score': 130, '95%ki': '125-135', 'percentil': 94}]
+#		expected_df = 
+#		test_dict = 
+
+	
+
 
 
 

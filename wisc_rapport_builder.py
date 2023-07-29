@@ -6,11 +6,25 @@ from docx.shared import Inches
 from datetime import datetime
 
 class Builder:
-	def __init__(self, path_to_excel):
-		try:
-			self.result_df = pd.read_excel(path_to_excel)
-		except:
-			self.result_df = ''
+	def __init__(self, input_dict):
+		#self.result_df = input_dataframe
+		self.input_dict = input_dict
+
+#	def create_score_df(scores):
+#		confidence_intervals = calculate_confidence_intervals(scores)
+#		
+#		return score_df
+#	def calculate_confidence_intervals(scores):
+#		for score in scores:
+#
+#		return confidence_intervals
+#	
+#	def calculate_confidence_interval:
+#		ci_upper = (100+3.92)
+#		return ci
+	def create_df_from_dict(result):
+		df_from_dict = pd.DataFrame.from_dict
+		return df_from_dict
 
 	def get_introduction(self):
 		introduction = generel_intro
@@ -33,7 +47,7 @@ class Builder:
 			return 'Langt over gennemsnittet'
 
 	def create_description_of_scores(self, result_dict):
-		long_veRSIon_dict = {'VFI': 'verbalt forståelsesindeks', 
+		long_version_dict = {'VFI': 'verbalt forståelsesindeks', 
 		       'HIK': 'hele skalaen intelligenskvotient', 
 		       'VSI': 'visuospatial (visuelt/rumligt) indeks', 
 		       'FHI': 'forarbejdningshastighedsindeks', 
@@ -43,7 +57,7 @@ class Builder:
 		description = ''
 		for result in result_dict:
 			comparison_to_mean = self.get_comparison_to_mean(result['score'])
-			description = description + f'''{result['mål']} ({long_veRSIon_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%ki']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
+			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%ki']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
 			#descriptions.append(description)
 		return description
 	
@@ -109,7 +123,9 @@ class Builder:
 		document.add_heading(f'WISC-IV rapport {datetime.today().strftime("%d-%m-%y")}', 0)
 		document.add_paragraph(generel_intro)
 		document.add_heading('Testresultat', 1)
-		result = self.get_result(self.result_df)
+		#result = self.get_result(self.result_df)
+		# testing if i can just pass dict:
+		result = self.input_dict
 		document.add_paragraph(self.create_description_of_scores(result))
 
 		document = self.add_table_to_document(document, result)
