@@ -6,9 +6,12 @@ from docx.shared import Inches
 from datetime import datetime
 
 class Builder:
-	def __init__(self, input_dict):
-		#self.result_df = input_dataframe
-		self.input_dict = input_dict
+	#def __init__(self, input_dict):
+	#	#self.result_df = input_dataframe
+	#	self.input_dict = input_dict
+	def __init__(self, input_path):
+		self.result_df = pd.read_excel(input_path)
+
 
 #	def create_score_df(scores):
 #		confidence_intervals = calculate_confidence_intervals(scores)
@@ -123,9 +126,9 @@ class Builder:
 		document.add_heading(f'WISC-IV rapport {datetime.today().strftime("%d-%m-%y")}', 0)
 		document.add_paragraph(generel_intro)
 		document.add_heading('Testresultat', 1)
-		#result = self.get_result(self.result_df)
+		result = self.get_result(self.result_df)
 		# testing if i can just pass dict:
-		result = self.input_dict
+		#result = self.input_dict
 		document.add_paragraph(self.create_description_of_scores(result))
 
 		document = self.add_table_to_document(document, result)
