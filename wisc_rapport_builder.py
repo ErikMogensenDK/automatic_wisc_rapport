@@ -40,7 +40,7 @@ class Builder:
 			return 'Noget under gennemsnittet'
 		if score > 84 and score < 90:
 			return 'Gennemsnittets nederste del'
-		if score > 90 and score < 109:
+		if score > 89 and score < 109:
 			return 'Gennemsnitligt'
 		if score > 108 and score <115:
 			return 'Øverste del af gennemsnittet'
