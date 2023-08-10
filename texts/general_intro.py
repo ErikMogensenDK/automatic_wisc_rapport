@@ -7,7 +7,7 @@ Testens resultat er delt op i 5 forskellige indekser: Verbal forståelse, Arbejd
 Det verbale forståelsesindeks (VFI) måler evnen til at forstå verbal information.
 Indekset for arbejdshukommelses måler evnen til mentalt at "holde flere bolde i luften". 
 Forarbejdningshastighed er udtryk for ens mentale arbejdshastighed.
-Det visuospatiale indeks måler evnen til rumlig bearbejdning og at kunne opfatte forholdet mellem helheder og dele. 
+Det visuospatiale indeks måler evnen til rumlig bearbejdning og evnen til at opfatte forholdet mellem helheder og dele. 
 Ræsonneringsindekset måler evnen til at tænke logisk og abstrakt, udvikle nye tankemønstre, drage konklusioner og se mønstre/sammenhænge.
 Testens resultat er opsummeret nedenfor i tekst og efterfølgende i tabel."""
 

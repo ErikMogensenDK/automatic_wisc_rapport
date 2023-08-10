@@ -39,7 +39,7 @@ class Builder:
 		if score > 69 and score < 85:
 			return 'Noget under gennemsnittet'
 		if score > 84 and score < 90:
-			return 'Nedre del af gennemsnittet'
+			return 'Gennemsnittets nederste del'
 		if score > 90 and score < 109:
 			return 'Gennemsnitligt'
 		if score > 108 and score <115:
@@ -50,23 +50,26 @@ class Builder:
 			return 'Langt over gennemsnittet'
 
 	def create_description_of_scores(self, result_dict):
-		long_version_dict = {'VFI': 'verbalt forståelsesindeks', 
-		       'HIK': 'hele skalaen intelligenskvotient', 
-		       'VSI': 'visuospatial (visuelt/rumligt) indeks', 
-		       'FHI': 'forarbejdningshastighedsindeks', 
-		       'AHI': 'arbejdshukommelsesindeks',
-		       'RSI': 'logisk ræsonneringsindeks'}
+		long_version_dict = {'VFI': 'Verbalt Forståelses-Indeks', 
+		       'HIK': 'Hele skalaen IntelligensKvotient', 
+		       'VSI': 'VisuoSpatialt Indeks', 
+		       'FHI': 'ForarbejdningsHastigheds-Indeks', 
+		       'AHI': 'ArbejdsHukommelses-Indeks',
+		       'RSI': 'Logisk Ræsonnerings-Indeks'}
 
 		description = ''
 		for result in result_dict:
 			comparison_to_mean = self.get_comparison_to_mean(result['score'])
 			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%ki']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
 			#descriptions.append(description)
+		self.long_version_dict = long_version_dict
 		return description
 	
 	def add_table_to_document(self, document, result_dict):
 		table = document.add_table(rows=7, cols=5) 
 		hdr_cells = table.rows[0].cells 
+		# indsæt evt. også lang version?
+		#hdr_cells[0].text = 'Indeks' + self.long_version_dict()
 		hdr_cells[0].text = 'Indeks' 
 		hdr_cells[1].text = 'Score' 
 		hdr_cells[2].text = '95%KI' 
