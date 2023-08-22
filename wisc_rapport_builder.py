@@ -4,13 +4,14 @@ from texts.general_intro import*
 from docx import Document
 from docx.shared import Inches
 from datetime import datetime
+import numpy as np
 
 class Builder:
-	#def __init__(self, input_dict):
-	#	#self.result_df = input_dataframe
-	#	self.input_dict = input_dict
-	def __init__(self, input_path):
-		self.result_df = pd.read_excel(input_path)
+	def __init__(self, input_dict):
+		#self.result_df = input_dataframe
+		self.input_dict = input_dict
+	#def __init__(self, input_path):
+		#self.result_df = pd.read_excel(input_path)
 
 
 #	def create_score_df(scores):
@@ -25,14 +26,7 @@ class Builder:
 #	def calculate_confidence_interval:
 #		ci_upper = (100+3.92)
 #		return ci
-	def create_df_from_dict(result):
-		df_from_dict = pd.DataFrame.from_dict
-		return df_from_dict
 
-	def get_introduction(self):
-		introduction = generel_intro
-		return introduction
-	
 	def get_comparison_to_mean(self, score):
 		if score < 70:
 			return 'Langt under gennemsnittet'
@@ -60,10 +54,32 @@ class Builder:
 		description = ''
 		for result in result_dict:
 			comparison_to_mean = self.get_comparison_to_mean(result['score'])
-			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%ki']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
+			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%kil']}-{result['95%kiu']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
 			#descriptions.append(description)
 		self.long_version_dict = long_version_dict
 		return description
+
+	#def create_result_dict_from_index_scores(index_score_dict):
+	# Below never used
+#	def lookup_info_using_index(self, index_score_dict):
+#		index = index_score_dict.key()
+#		score = index_score_dict.value()
+#		# TODO:
+#		KI = self.get_KI(score)
+#		# TODO:
+#		percentile = self.get_percentile(score)
+#		description = self.get_comparison_to_mean(score)
+#		info_dict = {'Indeks': index, 'Score': score, "95%KI": KI, "Percentil": percentile, "Beskrivelse": description}
+#		return info_dict
+
+#	def get_KI(self, score):
+#		# TODO create KI table/dictionary
+#		KI = KI_table[score]
+#		return KI
+
+
+
+
 	
 	def add_table_to_document(self, document, result_dict):
 		table = document.add_table(rows=7, cols=5) 
@@ -79,7 +95,8 @@ class Builder:
 			row_cells = table.add_row().cells 
 			row_cells[0].text = str(item['mål'])
 			row_cells[1].text = str(item['score']) 
-			row_cells[2].text = str(item['95%ki'])
+			text_for_ki = str(item['95%kil']) + '-' + str(item['95%kiu'])
+			row_cells[2].text = text_for_ki
 			row_cells[3].text = str(item['percentil'])
 			row_cells[4].text = self.get_comparison_to_mean(item['score'])
 		return document
@@ -109,12 +126,6 @@ class Builder:
 			case 'RSI':
 				return RSI_anbefaling_lav
 
-	def get_result(self, result_df):
-		indexes = ['VFI', 'VSI', 'RSI', 'AHI', 'FHI', 'HIK']
-		filtered_df = result_df[result_df.iloc[:, 0].isin(indexes)]
-		result = filtered_df.to_dict(orient='records')
-		return result
-
 	def get_recommendations_for_HIK(self, result):
 		# tjek om HIK er under eller over 85 og indsæt evt. følgende
 		if result[0]['score'] < 85:
@@ -122,16 +133,15 @@ class Builder:
 		if result[0]['score'] > 115:
 			return fortsat_intro_til_høj_begavelse
 
-
-
 	def build_rapport(self, save_name):
 		document = Document()
 		document.add_heading(f'WISC-IV rapport {datetime.today().strftime("%d-%m-%y")}', 0)
 		document.add_paragraph(generel_intro)
 		document.add_heading('Testresultat', 1)
-		result = self.get_result(self.result_df)
-		# testing if i can just pass dict:
-		#result = self.input_dict
+		#result = self.get_result(self.result_df)
+
+		#testing if i can just pass dict:
+		result = self.input_dict
 		document.add_paragraph(self.create_description_of_scores(result))
 
 		document = self.add_table_to_document(document, result)

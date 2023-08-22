@@ -94,6 +94,26 @@ Disse visuelle hjælpemidler vil have til fælles, at de giver mulighed for, at 
 #		test_dict = 
 
 	
+#	def test_create_result_dict_from_index_scores(self):
+#		test_input = {"VFI":70, "HIK": 100, "VSI": 85, "FHI": 115, "AHI": 130, "RSI": 145}
+#		builder_test = Builder(test_input)
+#		# insert 
+#		#expected = 
+#		actual = builder_test.create_result_dict_from_index_scores()
+#
+#
+#	def test_lookup_info_using_index_score(self):
+#		test_input = {"VFI":70, "HIK": 100, "VSI": 85, "FHI": 115, "AHI": 130, "RSI": 145}
+#		builder_test = Builder(test_input)
+#		input = {"VFI": 70}
+#		expected = {'Indeks': "VFI", 'Score': 70, "95%KI": "66-74", "Percentil": "3", "Beskrivelse": "Langt under gennemsnittet"}
+#		actual = builder_test.lookup_info_using_index_score(input)
+
+	def test_get_get_percentile(self):
+		test_input = {"VFI":70, "HIK": 100, "VSI": 85, "FHI": 115, "AHI": 130, "RSI": 145}
+		builder_test = Builder(test_input)
+		expected = 34
+		builder_test.get_percentile(85)
 
 
 
