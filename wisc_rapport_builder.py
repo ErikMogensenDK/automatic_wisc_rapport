@@ -44,17 +44,17 @@ class Builder:
 			return 'Langt over gennemsnittet'
 
 	def create_description_of_scores(self, result_dict):
-		long_version_dict = {'VFI': 'Verbalt Forståelses-Indeks', 
-		       'HIK': 'Hele skalaen IntelligensKvotient', 
-		       'VSI': 'VisuoSpatialt Indeks', 
-		       'FHI': 'ForarbejdningsHastigheds-Indeks', 
-		       'AHI': 'ArbejdsHukommelses-Indeks',
-		       'RSI': 'Logisk Ræsonnerings-Indeks'}
+		long_version_dict = {'VFI': 'verbalt forståelses-indeks', 
+		       'HIK': 'hele skalaen intelligensKvotient', 
+		       'VSI': 'visuospatialt indeks', 
+		       'FHI': 'forarbejdningshastigheds-indeks', 
+		       'AHI': 'arbejdshukommelses-indeks',
+		       'RSI': 'logisk ræsonnerings-indeks'}
 
 		description = ''
 		for result in result_dict:
 			comparison_to_mean = self.get_comparison_to_mean(result['score'])
-			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%kil']}-{result['95%kiu']}), hvilket er {comparison_to_mean}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
+			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%kil']}-{result['95%kiu']}), hvilket er {comparison_to_mean.lower()}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
 			#descriptions.append(description)
 		self.long_version_dict = long_version_dict
 		return description
@@ -82,7 +82,8 @@ class Builder:
 
 	
 	def add_table_to_document(self, document, result_dict):
-		table = document.add_table(rows=7, cols=5) 
+		table = document.add_table(rows=1, cols=5) 
+		table.style = "Light List"
 		hdr_cells = table.rows[0].cells 
 		# indsæt evt. også lang version?
 		#hdr_cells[0].text = 'Indeks' + self.long_version_dict()
@@ -108,15 +109,25 @@ class Builder:
 			if result['score'] < 86:
 				recommendation = self.get_recommendation_of_specific_index(result['mål'])
 				recommendations.append(recommendation)
-		recommendations = '\n'.join(recommendations)
+		#recommendations = '\n'.join(recommendations)
+		# needs to return recommendatiosn so they can be added one by one
 		return recommendations
+
+	def get_recommendations_lav_headings(self, result_dict):
+		recommendations_headers = []
+		for result in result_dict:
+			if result['score'] < 86:
+				header = self.get_header_of_specific_index(result['mål'])
+				recommendations_headers.append(header)
+		# needs to return recommendatiosn headers so they can be added one by one
+		return recommendations_headers
 	
 	def get_recommendation_of_specific_index(self, index):
 		match index:
 			case 'VFI':
 				return VFI_anbefaling_lav
 			case 'HIK':
-				return HIK_anbefaling_lav 
+				return HIK_anbefaling_lav
 			case 'AHI':
 				return AHI_anbefaling_lav 
 			case 'FHI':
@@ -125,6 +136,21 @@ class Builder:
 				return VFI_anbefaling_lav
 			case 'RSI':
 				return RSI_anbefaling_lav
+
+	def get_header_of_specific_index(self, index):
+		match index:
+			case 'VFI':
+				return "Anbefalinger til støtte af nedsat verbal forståelse"
+			case 'HIK':
+				return "\n"
+			case 'AHI':
+				return "Anbefalinger til støtte af nedsat arbejdshukommelse"
+			case 'FHI':
+				return "Anbefalinger til støtte af nedsat forarbejdningshastighed"
+			case 'VSI':
+				return "Anbefalinger til støtte af nedsat visuospatial bearbejdning"
+			case 'RSI':
+				return "Anbefalinger til støtte af nedsat ræsonnering"
 
 	def get_recommendations_for_HIK(self, result):
 		# tjek om HIK er under eller over 85 og indsæt evt. følgende
@@ -135,8 +161,11 @@ class Builder:
 
 	def build_rapport(self, save_name):
 		document = Document()
-		document.add_heading(f'WISC-IV rapport {datetime.today().strftime("%d-%m-%y")}', 0)
+		document.add_heading(f'WISC-V rapport {datetime.today().strftime("%d-%m-%y")}', 0)
+		document.add_heading(f'Generel beskrivelse af den kognitive test WISC-V', 1)
 		document.add_paragraph(generel_intro)
+		document.add_heading(f'Beskrivelse af forskellige indekser', 1)
+		document.add_paragraph(beskrivelse_af_indekser)
 		document.add_heading('Testresultat', 1)
 		#result = self.get_result(self.result_df)
 
@@ -152,8 +181,15 @@ class Builder:
 
 		document.add_heading('Anbefalinger', 1)
 		document.add_paragraph(self.get_recommendations_for_HIK(result))
-		document.add_paragraph(self.get_recommendations_lav(result))
+
+		document.add_heading('Generelle anbefalinger')
 		document.add_paragraph(generelle_anbefalinger)
+
+		recommendations = self.get_recommendations_lav(result)
+		recommendations_headers = self.get_recommendations_lav_headings(result)
+		for i in range(len(recommendations)):
+			document.add_heading(recommendations_headers[i])
+			document.add_paragraph(recommendations[i])
 		document.save(f'{save_name}.docx')
 		return document
 
