@@ -32,13 +32,13 @@ class Builder:
 			return 'Langt under gennemsnittet'
 		if score > 69 and score < 85:
 			return 'Noget under gennemsnittet'
-		if score > 84 and score < 90:
+		if score > 84 and score < 93:
 			return 'Gennemsnittets nederste del'
-		if score > 89 and score < 109:
+		if score > 92 and score < 108:
 			return 'Gennemsnitligt'
-		if score > 108 and score <115:
+		if score > 107 and score <116:
 			return 'Øverste del af gennemsnittet'
-		if score > 114 and score <130:
+		if score > 115 and score <130:
 			return 'Noget over gennemsnittet'
 		if score > 129: 
 			return 'Langt over gennemsnittet'
@@ -54,7 +54,7 @@ class Builder:
 		description = ''
 		for result in result_dict:
 			comparison_to_mean = self.get_comparison_to_mean(result['score'])
-			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {result['score']} (95% KI mellem {result['95%kil']}-{result['95%kiu']}), hvilket er {comparison_to_mean.lower()}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
+			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {int(result['score'])} (95% KI mellem {int(result['95%kil'])}-{int(result['95%kiu'])}), hvilket er {comparison_to_mean.lower()}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
 			#descriptions.append(description)
 		self.long_version_dict = long_version_dict
 		return description
@@ -95,8 +95,8 @@ class Builder:
 		for item in result_dict: 
 			row_cells = table.add_row().cells 
 			row_cells[0].text = str(item['mål'])
-			row_cells[1].text = str(item['score']) 
-			text_for_ki = str(item['95%kil']) + '-' + str(item['95%kiu'])
+			row_cells[1].text = str(int(item['score'])) 
+			text_for_ki = str(int(item['95%kil'])) + '-' + str(int(item['95%kiu']))
 			row_cells[2].text = text_for_ki
 			row_cells[3].text = str(item['percentil'])
 			row_cells[4].text = self.get_comparison_to_mean(item['score'])
