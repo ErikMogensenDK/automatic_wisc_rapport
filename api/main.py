@@ -35,3 +35,12 @@ if __name__ == '__main__':
     #app.run()
     # if ran below, it will be available to everyone on network (i think)
     app.run(host='0.0.0.0')
+
+
+
+#     "builds": [
+#         {
+#             "src": "api/main.py",
+#             "use": "@vercel/python"
+#         }
+#     ],
