@@ -37,7 +37,7 @@ class Builder:
 		if score > 92 and score < 108:
 			return 'Gennemsnitligt'
 		if score > 107 and score <116:
-			return 'Øverste del af gennemsnittet'
+			return 'Gennemsnittets øverste del'
 		if score > 115 and score <130:
 			return 'Noget over gennemsnittet'
 		if score > 129: 
@@ -89,16 +89,16 @@ class Builder:
 		#hdr_cells[0].text = 'Indeks' + self.long_version_dict()
 		hdr_cells[0].text = 'Indeks' 
 		hdr_cells[1].text = 'Score' 
-		hdr_cells[2].text = '95%KI' 
-		hdr_cells[3].text = 'Percentil' 
+		hdr_cells[2].text = 'Percentil' 
+		hdr_cells[3].text = '95%KI' 
 		hdr_cells[4].text = 'Beskrivelse' 
 		for item in result_dict: 
 			row_cells = table.add_row().cells 
 			row_cells[0].text = str(item['mål'])
 			row_cells[1].text = str(int(item['score'])) 
+			row_cells[2].text = str(item['percentil'])
 			text_for_ki = str(int(item['95%kil'])) + '-' + str(int(item['95%kiu']))
-			row_cells[2].text = text_for_ki
-			row_cells[3].text = str(item['percentil'])
+			row_cells[3].text = text_for_ki
 			row_cells[4].text = self.get_comparison_to_mean(item['score'])
 		return document
 
