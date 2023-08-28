@@ -32,9 +32,9 @@ def run_python_function():
 
 if __name__ == '__main__':
     #print("Successfully received request!")
-    #app.run()
+    app.run()
     # if ran below, it will be available to everyone on network (i think)
-    app.run(host='0.0.0.0')
+    #app.run(host='0.0.0.0')
 
 
 
