@@ -25,7 +25,7 @@ Dette kræver brug af opmærksomhed, koncentration og mental kontrol.
 Hvis arbejdshukommelsen har lav kapacitet kan det derfor være svært at løse komplekse opgaver, som består af mange dele, som samtidigt skal anvendes - da der ikke er plads til at fastholde dem alle i sindet på en gang - nogle af delene kan blive "glemt", i takt med at andre bliver anvendt.
 I forlængelse heraf kan følgende tiltag anvendes for at støtte en elev med nedsat arbejdshukommelse.
 - Vær sikker på at barnet ved hvad de skal gøre for at løse opgaven
-- Øv at følge instruktioner ifbm. opgaveløsning
+- Øv at følge instruktioner ifm. opgaveløsning
 - Bryd instruktioner ned i mindre bidder og gentag dem gerne
 - Bryd opgaven ned i mindre dele
 - Lær barnet at bruge egne strategier (fx at spørge en underviser, brug af hjælpemidler som it-computer, opdeling af opgaver i overskuelige dele)

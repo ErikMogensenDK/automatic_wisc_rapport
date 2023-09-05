@@ -45,7 +45,7 @@ class Builder:
 
 	def create_description_of_scores(self, result_dict):
 		long_version_dict = {'VFI': 'verbalt forståelses-indeks', 
-		       'HIK': 'hele skalaen intelligensKvotient', 
+		       'HIK': 'hele skalaen intelligenskvotient', 
 		       'VSI': 'visuospatialt indeks', 
 		       'FHI': 'forarbejdningshastigheds-indeks', 
 		       'AHI': 'arbejdshukommelses-indeks',
