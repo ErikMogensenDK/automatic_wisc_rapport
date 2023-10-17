@@ -8,24 +8,7 @@ import numpy as np
 
 class Builder:
 	def __init__(self, input_dict):
-		#self.result_df = input_dataframe
 		self.input_dict = input_dict
-	#def __init__(self, input_path):
-		#self.result_df = pd.read_excel(input_path)
-
-
-#	def create_score_df(scores):
-#		confidence_intervals = calculate_confidence_intervals(scores)
-#		
-#		return score_df
-#	def calculate_confidence_intervals(scores):
-#		for score in scores:
-#
-#		return confidence_intervals
-#	
-#	def calculate_confidence_interval:
-#		ci_upper = (100+3.92)
-#		return ci
 
 	def get_comparison_to_mean(self, score):
 		if score < 70:
@@ -55,38 +38,13 @@ class Builder:
 		for result in result_dict:
 			comparison_to_mean = self.get_comparison_to_mean(result['score'])
 			description = description + f'''{result['mål']} ({long_version_dict[result['mål']]}) blev målt til {int(result['score'])} (95% KI mellem {int(result['95%kil'])}-{int(result['95%kiu'])}), hvilket er {comparison_to_mean.lower()}. Denne score var {result['percentil']}. percentil, hvilket vil sige at {result['percentil']}% af børnene i norm-gruppen scorede lavere. '''
-			#descriptions.append(description)
 		self.long_version_dict = long_version_dict
 		return description
 
-	#def create_result_dict_from_index_scores(index_score_dict):
-	# Below never used
-#	def lookup_info_using_index(self, index_score_dict):
-#		index = index_score_dict.key()
-#		score = index_score_dict.value()
-#		# TODO:
-#		KI = self.get_KI(score)
-#		# TODO:
-#		percentile = self.get_percentile(score)
-#		description = self.get_comparison_to_mean(score)
-#		info_dict = {'Indeks': index, 'Score': score, "95%KI": KI, "Percentil": percentile, "Beskrivelse": description}
-#		return info_dict
-
-#	def get_KI(self, score):
-#		# TODO create KI table/dictionary
-#		KI = KI_table[score]
-#		return KI
-
-
-
-
-	
 	def add_table_to_document(self, document, result_dict):
 		table = document.add_table(rows=1, cols=5) 
 		table.style = "Light List"
 		hdr_cells = table.rows[0].cells 
-		# indsæt evt. også lang version?
-		#hdr_cells[0].text = 'Indeks' + self.long_version_dict()
 		hdr_cells[0].text = 'Indeks' 
 		hdr_cells[1].text = 'Score' 
 		hdr_cells[2].text = 'Percentil' 
@@ -109,8 +67,6 @@ class Builder:
 			if result['score'] < 86:
 				recommendation = self.get_recommendation_of_specific_index(result['mål'])
 				recommendations.append(recommendation)
-		#recommendations = '\n'.join(recommendations)
-		# needs to return recommendatiosn so they can be added one by one
 		return recommendations
 
 	def get_recommendations_lav_headings(self, result_dict):
@@ -119,7 +75,6 @@ class Builder:
 			if result['score'] < 86:
 				header = self.get_header_of_specific_index(result['mål'])
 				recommendations_headers.append(header)
-		# needs to return recommendatiosn headers so they can be added one by one
 		return recommendations_headers
 	
 	def get_recommendation_of_specific_index(self, index):
@@ -153,7 +108,7 @@ class Builder:
 				return "Anbefalinger til støtte af nedsat ræsonnering"
 
 	def get_recommendations_for_HIK(self, result):
-		# tjek om HIK er under eller over 85 og indsæt evt. følgende
+		# Check if IQ over or under average and insert recommendations if that should be the case.
 		if result[0]['score'] < 85:
 			return fortsat_intro_til_lav_begavelse
 		if result[0]['score'] > 115:
@@ -167,9 +122,7 @@ class Builder:
 		document.add_heading(f'Beskrivelse af forskellige indekser', 1)
 		document.add_paragraph(beskrivelse_af_indekser)
 		document.add_heading('Testresultat', 1)
-		#result = self.get_result(self.result_df)
 
-		#testing if i can just pass dict:
 		result = self.input_dict
 		document.add_paragraph(self.create_description_of_scores(result))
 
@@ -193,18 +146,3 @@ class Builder:
 		document.save(f'{save_name}.docx')
 		return document
 
-
-	#def create_description()
-		
-# Insert general description
-
-# create df from excel
-# for row 2-6 (or whatever) in excel: report each col from df
-
-
-# Insert general recommendations
-# create recommendations based on scores
-# for each column containing scores, if score lower than 85: 
-#	Insert recommendation based on category in row with score lower than 85
-
-# Create summary?
