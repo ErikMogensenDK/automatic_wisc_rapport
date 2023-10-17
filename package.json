@@ -1,6 +1,0 @@
-{
-  "name": "automatic-wisc-rapport-scau",
-  "dependencies": {
-	"flask": "2.3.2"
-  }
-}
